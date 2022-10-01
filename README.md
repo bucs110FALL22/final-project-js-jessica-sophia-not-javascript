@@ -9,7 +9,7 @@
 
 << [link to demo presentation slides](#) >>
 
-### Team: << Team JS (Jessica+Sophia, not JavaScript) >>
+### Team: << Team JS (Jessica + Sophia, not JavaScript) >>
 #### << Jessica Chen, Sophia Lee >>
 
 ***
