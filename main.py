@@ -1,13 +1,12 @@
-import pygame
-#import your controller
+import pygame, sys
+from pygame.locals import QUIT
 
-def main():
-    pygame.init()
-    #Create an instance on your controller object
-    #Call your mainloop
-    
-    ###### NOTHING ELSE SHOULD GO IN main(), JUST THE ABOVE 3 LINES OF CODE ######
-
-# https://codefather.tech/blog/if-name-main-python/
-if __name__ == '__main__':
-    main()
+pygame.init()
+DISPLAYSURF = pygame.display.set_mode((400, 300))
+pygame.display.set_caption('Hello World!')
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+    pygame.display.update()
