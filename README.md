@@ -16,7 +16,7 @@
 
 ## Project Description
 
-<< Give an overview of your project >>
+<< This is a multiplayer game where each individual user tries to catch the other user. Throughout the chase, the users come across obstacles or powerups, which can change the players' speeds and sizes. >>
 
 ***    
 
@@ -27,14 +27,14 @@
     
     
 - **Final GUI**
-  - << You should also have a screenshot of each screen for your final GUI >>
+  - <<  >>
 
 ***        
 
 ## Program Design
 
 * Non-Standard libraries
-    * << You should have a list of any additional libraries or modules used (pygame, request) beyond non-standard python. 
+    * << Random >>
          For each additional module you should include
          - url for the module documentation
          - a short description of the module >>
@@ -42,7 +42,11 @@
     * << A simple drawing that shows the class relationships in your code (see below for an example). This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm. >>
         * ![class diagram](assets/class_diagram.jpg) 
 * Classes
-    * << You should have a list of each of your classes with a description. >>
+    * << PlayerOne - The player will be able to move left and right, and jump, using wasd
+         PlayerTwo - The player will be able to move left and right, and jump, using arrow keys
+         Projectile - A powerup that boosts the player speed. It will travel across the screen and change the             player's speed when they get it
+         Flag - A flag will be randomly given to a player. This flag will visually travel with whichever player
+         gets it >>
 
 ## Project Structure and File List
 
@@ -50,7 +54,10 @@ The Project is broken down into the following file structure:
 
 * main.py
 * src
-    * << all of your python files should go here >>
+    * << Flag: change_players(),change_color(), despawn_on_time() >>
+    * << PlayerOne: move()>>
+    *  << PlayerTwo: move()>>
+    * << projectile: change_speed(), slow_player_on_hit(), change_size()>>
 * assets
     * << all of your media, i.e. images, font files, etc, should go here) >>
 * etc
