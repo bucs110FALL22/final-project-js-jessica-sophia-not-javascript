@@ -16,7 +16,7 @@
 
 ## Project Description
 
-<< This is a multiplayer game where each individual user tries to catch the other user. Throughout the chase, the users come across obstacles or powerups, which can change the players' speeds and sizes. >>
+<< Papa's cooking game series is a childhood favorite of many. JS' DiningHalleria is heavily inspired by said cooking game series, but with Jessica's and Sophia's own twist. As residents of the Hinman community, the starting page of the game's background is the Hinman dining hall. Click the start button to play a game of receiving and creating orders with the goal of receiving as many tips as possible. >>
 
 ***    
 
@@ -54,10 +54,17 @@ The Project is broken down into the following file structure:
 
 * main.py
 * src
-    * << Flag: change_players(),change_color(), despawn_on_time() >>
-    * << PlayerOne: move()>>
-    *  << PlayerTwo: move()>>
-    * << projectile: change_speed(), slow_player_on_hit(), change_size()>>
+    * components
+      * << __init__.py >>
+      * << base_component.py >>
+      * << button.py >>
+      * << image.py >>
+      * << invisible_button.py >>
+      * << textbox.py >>
+      * << PlayerOne: move()>>
+      *  << PlayerTwo: move()>>
+      * << projectile: change_speed(), slow_player_on_hit(), change_size()>>
+      
 * assets
     * << all of your media, i.e. images, font files, etc, should go here) >>
 * etc
