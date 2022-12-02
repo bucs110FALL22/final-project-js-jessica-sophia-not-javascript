@@ -11,7 +11,8 @@ class Paragraph(BaseComponent):
       self.textboxes.append(
         Textbox(
           line,
-          (x, y + i*gap)
+          (x, y + i*gap),
+          **kwargs
         )
       )
 

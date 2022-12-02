@@ -46,7 +46,7 @@ class WelcomeScene(BaseScene):
     self.sceneService.switchToScene("help_scene", HelpScene, self.context)
     
   def onQuitClick(self):
-    self.screenService.clearCurrentScene()
+    self.sceneService.clearCurrentScene()
 
   def handleEvents(self, events, keys):
     for event in events:

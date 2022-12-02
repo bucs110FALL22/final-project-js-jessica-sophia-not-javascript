@@ -128,7 +128,7 @@ class KitchenScene(BaseScene):
       )
 
     self.summaryLines = []
-
+    self.updateSummaryLines()
 
   def updateSummaryLines(self):
     self.summaryLines = []
