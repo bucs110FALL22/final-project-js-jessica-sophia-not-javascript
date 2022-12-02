@@ -6,16 +6,23 @@ class SceneService:
 
   def __init__(self):
     self.activeScene = None
+    self.classes = {}
     self.generatedScenes = {}
 
-  def switchToScene(self, key, SceneClass=None, context=None):
+  def switchToScene(self, key, SceneClass=None, context=None, reset=False):
     """
     This method will switch to the scene based on the key
     If there is already a scene associated with the key,
     then the service will just use that scene.
     If a new scene is provided, it will use that instead
     """
-    if SceneClass== None:
+    if reset:
+      if key not in self.classes or context == None:
+        raise Exception("SceneClass and context must be defined for a forced reset")
+      self.activeScene = self.classes[key](context)
+      return
+    
+    if SceneClass == None:
       if key in self.generatedScenes:
         self.activeScene = self.generatedScenes[key]
         return
@@ -23,9 +30,10 @@ class SceneService:
       raise Exception(f"Scene associated with [{key}] not defined")
 
     newScene = SceneClass(context)
+    self.classes[key] = SceneClass
     self.generatedScenes[key] = newScene
     self.activeScene = newScene
-
+  
   def getCurrentScene(self):
     return self.activeScene
 

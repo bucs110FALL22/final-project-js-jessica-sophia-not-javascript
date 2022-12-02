@@ -1,6 +1,7 @@
 import pygame
 from .base_scene import BaseScene
 from .dining_empty_scene import DiningEmptyScene
+from .help_scene import HelpScene
 from ..components import Button, Textbox, Image
 
 class WelcomeScene(BaseScene):
@@ -11,9 +12,10 @@ class WelcomeScene(BaseScene):
 
     self.dining_hall_image = Image(
       r"./assets/dining_hall.jpg",
-      (0, 0)
+      (0, 0),
+      lambda img : pygame.transform.scale(img, (750, 500))
     )
-    
+  
     self.startButton = Button(
       (140, 40), 
       (375 - 35, 250 - 20), 
@@ -41,10 +43,10 @@ class WelcomeScene(BaseScene):
     self.sceneService.switchToScene("dining_no_customer", DiningEmptyScene, self.context)
 
   def onHelpClick(self):
-    print("Hello, you pressed the HELP button")
+    self.sceneService.switchToScene("help_scene", HelpScene, self.context)
     
   def onQuitClick(self):
-    print("Hello, you pressed the QUIT button")
+    self.screenService.clearCurrentScene()
 
   def handleEvents(self, events, keys):
     for event in events:

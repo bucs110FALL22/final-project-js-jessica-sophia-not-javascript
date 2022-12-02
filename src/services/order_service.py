@@ -12,6 +12,11 @@ class OrderService:
   ]
   
   def __init__(self):
+    self.id = 1
+    self.orders = []
+
+  def reset(self):
+    self.id = 1
     self.orders = []
 
   def generateNewOrder(self):
@@ -32,7 +37,13 @@ class OrderService:
     for top in toppings:
       order[top] = random.randint(2, 5)
 
+    order["id"] = self.id
+    self.id+= 1
+
     return order
+
+  def getOrders(self):
+    return self.orders
 
   def addOrder(self, order):
     self.orders.append(order)
@@ -40,8 +51,9 @@ class OrderService:
   def getOrder(self, index):
     return self.orders[index]
 
-  def removeOrder(self, index):
-    return self.orders.pop(index)
+  def removeOrder(self, order):
+    id = order["id"]
+    self.orders = list(filter(lambda o : o["id"] != id, self.orders))
 
   def size(self):
     return len(self.orders)
@@ -49,6 +61,8 @@ class OrderService:
   def getSummary(self, order):
     lines = []
     for ing in OrderService.INGREDIENTS:
+      if ing not in order:
+        continue
       amount = order[ing]
       if amount < 1:
         continue

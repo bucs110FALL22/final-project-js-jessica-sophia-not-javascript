@@ -7,6 +7,8 @@ class EndingScene(BaseScene):
     BaseScene.__init__(self, BaseScene)
     self.context = context
     self.sceneService = context["scene"]
+    self.orderService = context["order"]
+    self.scoreService = context["score"]
     
     # WARNING: self.player is not being used
     self.player = Image(
@@ -14,6 +16,16 @@ class EndingScene(BaseScene):
       (20, 208),
       lambda img : pygame.transform.flip(img, True, False),
       lambda img : pygame.transform.scale(img, (140, 280))
+    )
+
+    self.scoreService.updateMax()
+    self.total_tips = Textbox(
+      "You have earned a total of: ${:.2f}".format(self.scoreService.getTips()), 
+      (100, 100)
+    )
+    self.highScore = Textbox(
+      "High Score: ${:.2f}".format(self.scoreService.getHighScore()), 
+      (280, 200)
     )
     
     font = pygame.font.SysFont("Helvetica", 24)
@@ -33,7 +45,7 @@ class EndingScene(BaseScene):
       font = font,
       onClick = self.onGoHomeClick
     )
-
+    
 
   def handleEvents(self, events, keys):
     for event in events:
@@ -48,9 +60,17 @@ class EndingScene(BaseScene):
     self.goHomeButton.render(screen)
     self.player.render(screen)
     self.replayButton.render(screen)
+    self.total_tips.render(screen)
+    self.highScore.render(screen)
+
+  def reset(self):
+    self.scoreService.reset()
+    self.orderService.reset()
 
   def onReplayClick(self):
+    self.reset()
     self.sceneService.switchToScene("dining_no_customer")
 
   def onGoHomeClick(self):
-    self.sceneService.switchToScene("welcome_scene")
+    self.reset()
+    self.sceneService.switchToScene("welcome")

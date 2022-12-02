@@ -1,15 +1,13 @@
 import pygame
 from .base_scene import BaseScene
-from .results_scene import ResultsScene
+from .welcome_scene import WelcomeScene
 from ..components import Textbox, Button, InvisibleButton, Image
 
-class KitchenOrderScene(BaseScene):
+class HelpScene(BaseScene):
   def __init__(self, context):
     BaseScene.__init__(self, BaseScene)  
     self.context = context
     self.sceneService = context["scene"]
-    self.kitchenService = context["kitchen"]
-    self.orderService = context["order"]
     
     font = pygame.font.SysFont("Helvetica", 24)
     
@@ -18,45 +16,20 @@ class KitchenOrderScene(BaseScene):
       (675, 30),
       lambda img : pygame.transform.scale(img, (50, 50))
     )
-    self.SendOutFoodButton = Button(
-      (228, 46),
-      (533, 444),
-      (506, 433),
-      text="Send Out Food",
-      font = font,
-      onClick = self.onSendOutFoodClick
-    )
     
     self.exitButton = InvisibleButton(
       (50, 50),
       (675, 30),
       onClick = self.onExitButtonClick
     )
+    def onExitClick(self):
+    self.sceneService.switchToScene("welcome_scene", WelcomeScene, self.context)
   
-    order, order_index = self.kitchenService.getFocus()
-    ORDER_X = 240
-    self.orderTitle = Textbox(
-      f"ORDER {order['id']}", 
-      (ORDER_X, 90), 
-      font = font
-    )
-
-    self.orderLines = []
-    orderSummary = self.orderService.getSummary(order)
-    for i, line in enumerate(orderSummary):
-      self.orderLines.append(
-        Textbox(
-          line, 
-          (ORDER_X, 140 + 80*i), 
-          font = font
-        )
-      )
     
   def handleEvents(self, events, keys):
     for event in events:
       if event.type == pygame.MOUSEBUTTONDOWN:
         if pygame.mouse.get_pressed()[0]:
-          self.SendOutFoodButton.handleClick()
           self.exitButton.handleClick()
           break     
     
@@ -64,16 +37,12 @@ class KitchenOrderScene(BaseScene):
     screen.fill((194, 226, 247))
     pygame.draw.rect(screen, (255, 255, 255), [200, 72, 350, 394])
     pygame.draw.rect(screen, (0, 255, 0), [506, 433, 228, 46])
-    self.SendOutFoodButton.render(screen)
     self.exitButton.render(screen)
     self.closeButton.render(screen)
     for orderLine in self.orderLines:
       orderLine.render(screen)
     self.orderTitle.render(screen)
     
-    
-  def onSendOutFoodClick(self):
-      self.sceneService.switchToScene("results_scene", ResultsScene, self.context)
+
   def onExitButtonClick(self):
-    self.sceneService.switchToScene("kitchen_scene")
-    
+    self.sceneService.switchToScene("welcome_scene")

@@ -11,7 +11,7 @@ class InvisibleButton(Button):
       **kwargs,
       text=""
     )
-    self.debug = getOrElse(kwargs, "debug", True)
+    self.debug = getOrElse(kwargs, "debug", False)
 
   def render(self, screen):
     """

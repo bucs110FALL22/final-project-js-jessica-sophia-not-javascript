@@ -8,6 +8,10 @@ class OrderingScene(BaseScene):
     BaseScene.__init__(self, BaseScene)
     self.context = context
     self.sceneService = context["scene"]
+    self.orderService = context["order"]
+
+    self.newOrder = self.orderService.generateNewOrder()
+    self.orderService.addOrder(self.newOrder)
     
     self.order_image = Image(
       r"./assets/orderBackground.png",
@@ -35,13 +39,32 @@ class OrderingScene(BaseScene):
     self.title = Textbox("Ordering...", (17, 15), font = font)
     # 621, 433, 
     self.createButton = Button(
-      (1, 46),
+      (150, 46),
       (530, 444),
       (521, 433),
-      text="Go To Kitchen",
+      text="Create",
       font = font,
       onClick=self.onCreateClick
     )
+
+    ORDER_X = 360
+    self.orderTitle = Textbox(
+      f"ORDER {self.newOrder['id']}", 
+      (ORDER_X, 90), 
+      font = font
+    )
+
+    self.orderLines = []
+    orderSummary = self.orderService.getSummary(self.newOrder)
+    for i, line in enumerate(orderSummary):
+      self.orderLines.append(
+        Textbox(
+          line, 
+          (ORDER_X, 140 + 60*i), 
+          font = font
+        )
+      )
+    
 
   def handleEvents(self, events, keys):
     for event in events:
@@ -54,8 +77,15 @@ class OrderingScene(BaseScene):
     self.order_image.render(screen)
     self.player.render(screen)
     self.customer.render(screen)
+    
     self.title.render(screen)
+    
     pygame.draw.rect(screen, "white", [345, 72, 350, 394])
+    self.orderTitle.render(screen)
+
+    for orderLine in self.orderLines:
+      orderLine.render(screen)
+    
     self.createButton.render(screen)
 
   def onCreateClick(self):

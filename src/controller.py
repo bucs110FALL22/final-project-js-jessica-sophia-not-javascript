@@ -1,3 +1,4 @@
+from sys import exit
 import pygame
 from .scenes import *
 from .services import *
@@ -46,3 +47,8 @@ class Controller:
       
       # delay a bit until next frame
       self.clock.tick(60)
+
+    # we don't have any more active scenes, so we quit
+    pygame.display.quit()
+    pygame.quit()
+    exit()

@@ -8,10 +8,17 @@ class ScoreService:
     self.currentTip = 0
     self.maxTip = 0
 
+  def getTips(self):
+    return self.currentTip
+
+  def getHighScore(self):
+    return self.maxTip
+    
   def reset(self):
     self.currentTip = 0
 
   def hardReset(self):
+    self.currentTip = 0
     self.maxTip = 0
 
   def addTip(self, amount):

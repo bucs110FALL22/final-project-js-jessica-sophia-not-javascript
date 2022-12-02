@@ -1,10 +1,13 @@
 import pygame
 from .base_scene import BaseScene
+from .ordering_scene import OrderingScene
 from ..components import Textbox, Image
 
 class DiningCustomerScene(BaseScene):
   def __init__(self, context):
     BaseScene.__init__(self, BaseScene)
+    self.context = context
+    self.sceneService = context["scene"]
 
     self.order_image = Image(
       r"./assets/orderBackground.png",
@@ -17,18 +20,27 @@ class DiningCustomerScene(BaseScene):
       lambda img : pygame.transform.flip(img, True, False),
       lambda img : pygame.transform.scale(img, (140, 280))
     )
+    
     self.customer = Image(
       r"./assets/customer.png",
       (550, 208),
       lambda img : pygame.transform.scale(img, (140, 280))
     )
+    self.customerXCoordinate = 550
     
     font = pygame.font.SysFont("Helvetica", 24)
     self.title = Textbox("Dining Room", (17, 15), font=font)
 
+  def updateStates(self):
+    newX = self.customerXCoordinate - 10
+    self.customerXCoordinate = max(150, newX)
+
+    if self.customerXCoordinate == 150:
+      self.sceneService.switchToScene("order_scene", OrderingScene, self.context)
+  
   def render(self, screen):
     self.title.render(screen)
     self.order_image.render(screen)
     self.player.render(screen)
-    self.customer.render(screen)
+    self.customer.render(screen, (self.customerXCoordinate, 208))
     

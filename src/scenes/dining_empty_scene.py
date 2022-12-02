@@ -77,4 +77,7 @@ class DiningEmptyScene(BaseScene):
     self.sceneService.switchToScene("ending_scene", EndingScene , self.context)
 
   def onGoToKitchenClick(self):
-    self.sceneService.switchToScene("kitchen_scene", KitchenScene, self.context)
+    try:
+      self.sceneService.switchToScene("kitchen_scene")
+    except:
+      self.sceneService.switchToScene("kitchen_scene", KitchenScene, self.context)
