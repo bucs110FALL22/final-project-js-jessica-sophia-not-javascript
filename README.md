@@ -1,30 +1,29 @@
 :warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 # CS110 Project Proposal
-# << Project Title >>
+# JS' DiningHalleria
 ## CS 110 Final Project
-### << Semester, Year >>
+### Fall, 2022
 ### [Assignment Description](https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit?usp=sharing)
 
-<< [repl](https://replit.com/join/itrkusqryz-jchen753) >>
+[repl link](https://replit.com/join/itrkusqryz-jchen753)
 
-<< [link to demo presentation slides](#) >>
+[demo presentation slides](https://docs.google.com/presentation/d/1FM5DYylx94i1ZqEHgAuYoRv2kLpDqNlbks5mNqKFjkI/edit#slide=id.g10b651380e3_0_1544)
 
-### Team: << Team JS >>
-#### << Jessica Chen, Sophia Lee >>
+### Team: Team JS
+#### Jessica Chen, Sophia Lee
 
 ***
 
 ## Project Description
 
-<< Papa's cooking game series is a childhood favorite of many. JS' DiningHalleria is heavily inspired by said cooking game series, but with Jessica's and Sophia's own twist. As residents of the Hinman community, the starting page of the game's background is the Hinman dining hall. Click the start button to play a game of receiving and creating orders with the goal of receiving as many tips as possible. >>
+Papa's cooking game series is a childhood favorite of many. JS' DiningHalleria is heavily inspired by said cooking game series, but with Jessica's and Sophia's own twist. As residents of the Hinman community, the starting page of the game's background is the Hinman dining hall. Click the start button to play a game of receiving and creating orders with the goal of receiving as many tips as possible.
 
 ***    
 
 ## User Interface Design
 
 - **Initial Concept**
-  - << A wireframe or drawing of the user interface concept along with a short description of the interface. You should have one for each screen in your program. For example, if your program has a start screen, game screen, and game over screen, you should include a wireframe / screenshot / drawing of each one and a short description of the components. >>
-    
+  - << A wireframe or drawing of the user interface concept along with a short description of the interface. You should have one for each screen in y* << ending_scene.py>>our program. For example, if your program has a start screen, game screen, and game over screen, you should include a wireframe / screenshot / drawing of each one and a short description of the components. >>
     
 - **Final GUI**
   - <<  >>
@@ -34,19 +33,26 @@
 ## Program Design
 
 * Non-Standard libraries
-    * << Random >>
-         For each additional module you should include
-         - url for the module documentation
-         - a short description of the module >>
+    
 * Class Interface Design
     * << A simple drawing that shows the class relationships in your code (see below for an example). This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm. >>
         * ![class diagram](assets/class_diagram.jpg) 
 * Classes
-    * << PlayerOne - The player will be able to move left and right, and jump, using wasd
-         PlayerTwo - The player will be able to move left and right, and jump, using arrow keys
-         Projectile - A powerup that boosts the player speed. It will travel across the screen and change the             player's speed when they get it
-         Flag - A flag will be randomly given to a player. This flag will visually travel with whichever player
-         gets it >>
+    * BaseComponent
+    * Button
+    * Image
+    * InvisibleBUtton
+    * TextBox
+    * BaseScene
+    * CreditsScene
+    * DiningCustomerScene
+    * DiningEmptyScene
+    * EndingScene
+    * KitchenOrderScene
+    * KitchenScene
+    * OrderingScene
+    * ResultsScene
+    * WelcomeScene
 
 ## Project Structure and File List
 
@@ -55,18 +61,30 @@ The Project is broken down into the following file structure:
 * main.py
 * src
     * components
-      * << __init__.py >>
-      * << base_component.py >>
-      * << button.py >>
-      * << image.py >>
-      * << invisible_button.py >>
-      * << textbox.py >>
-      * << PlayerOne: move()>>
-      *  << PlayerTwo: move()>>
-      * << projectile: change_speed(), slow_player_on_hit(), change_size()>>
+      * __init__.py
+      * base_component.py
+      * button.py
+      * image.py
+      * invisible_button.py 
+      * textbox.py 
+    * scenes
+      * __init__.py
+      * base_scene.py
+      * credits_scene.py
+      * dining_customer_scene.py
+      * dining_empty_scene.py
+      * ending_scene.py
+      * kitchen_order_scene.py
+      * kitchen_scene.py
+      * ordering_scene.py
+      * results_scene.py
+      * welcome_scene.py
+    * services
+      * controller.py
+  
       
 * assets
-    * << all of your media, i.e. images, font files, etc, should go here) >>
+    * <<"pork.png","pepper.png">>
 * etc
     * << This is a catch all folder for things that are not part of your project, but you want to keep with your project >>
 
@@ -74,11 +92,13 @@ The Project is broken down into the following file structure:
 
 ## Tasks and Responsibilities 
 
-   * Outline the team member roles and who was responsible for each class/method, both individual and collaborative.
+   * Back End: Jessica, Sophia
+   * Front End: Jessica, Sophia
+   We had multiple sessions where we sat down together and coded side by side. After finalizing our idea with the use of Figma, we were able to get a better understanding of each other's ideas and come to a consensus on what we want the game to look like.
 
 ## Testing
 
-* << Describe your testing strategy for your project. >>
+* Because there are multiple scenes throughout this game, when we implemented a new function, we ran through each scene individually to made sure that the output ran the way that it was intended. 
 
 ## ATP
 
