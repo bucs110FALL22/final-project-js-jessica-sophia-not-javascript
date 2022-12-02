@@ -23,10 +23,10 @@ Papa's cooking game series is a childhood favorite of many. JS' DiningHalleria i
 ## User Interface Design
 
 - **Initial Concept**
-  - << A wireframe or drawing of the user interface concept along with a short description of the interface. You should have one for each screen in y* << ending_scene.py>>our program. For example, if your program has a start screen, game screen, and game over screen, you should include a wireframe / screenshot / drawing of each one and a short description of the components. >>
+
     
 - **Final GUI**
-  - <<  >>
+  - << ![Untitled-1](Untitled-1.png) >>
 
 ***        
 
@@ -84,9 +84,18 @@ The Project is broken down into the following file structure:
   
       
 * assets
-    * <<"pork.png","pepper.png">>
-* etc
-    * << This is a catch all folder for things that are not part of your project, but you want to keep with your project >>
+    * chicken.png
+    * pork.png
+    * beef.png
+    * broccoli.png
+    * carrots.png
+    * pepper.png
+    * noodles.png
+    * rice.png
+    * orderBackground.png
+    * dining_hall.jpg
+    * customer.png
+    * playerboy.png
 
 ***
 
@@ -94,11 +103,11 @@ The Project is broken down into the following file structure:
 
    * Back End: Jessica, Sophia
    * Front End: Jessica, Sophia
-   We had multiple sessions where we sat down together and coded side by side. After finalizing our idea with the use of Figma, we were able to get a better understanding of each other's ideas and come to a consensus on what we want the game to look like.
+   * We had multiple sessions where we sat down together and coded side by side. After finalizing our idea with the use of Figma, we were able to get a better understanding of each other's ideas and come to a consensus on what we want the game to look like.
 
 ## Testing
 
-* Because there are multiple scenes throughout this game, when we implemented a new function, we ran through each scene individually to made sure that the output ran the way that it was intended. 
+* Because there are multiple scenes throughout this game, when we implemented a new function, we ran through each scene individually to made sure that the output ran the way that it was intended. After each run, we would debug and did not move on to the coding more until the bug was fixed.
 
 ## ATP
 

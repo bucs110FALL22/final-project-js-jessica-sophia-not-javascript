@@ -20,7 +20,7 @@ class Controller:
   def run(self):
     self.sceneSvc.switchToScene(
       "welcome",
-      KitchenScene,
+      WelcomeScene,
       self.context
     )
 
