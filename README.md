@@ -26,7 +26,6 @@ Papa's cooking game series is a childhood favorite of many. JS' DiningHalleria i
  ![Untitled-1](etc/Untitled-1.png)
     
 - **Final GUI**
-  - ![final](etc/final.jpg)
   - ![finalGuiNoFlow](etc/finalGuiNoFlow.jpg)
 ***        
 
@@ -125,4 +124,8 @@ The Project is broken down into the following file structure:
 | 10                   | click on "Create" button | The kitchen scene is shown and there is an additional order ticket on the upper right corner|
 |  11                  | click on "Take an Order" button | Goes back to the dining room|
 |  12                   | click on "Go to Kitchen" button | Goes back to the kitchen with no changes made to kitchen|
-|  13                   | click on "Go to Kitchen" button | Goes back to the kitchen with no changes made to kitchen|
+|  13                   | click on the order ticket on the upper right corner | Shows the order|
+|  14                   | click on the exit button | Goes back to the kitchen|
+|  15                   | click on the order ticket on the upper right corner | Shows the order|
+|  16                   | click on the "Send Out Food" button | Shows the amount tips earned based on how accurate the food selected in the kitchen matches the order.|
+|  17                   | click on the order ticket on the upper right corner | Shows the order|
