@@ -1,6 +1,6 @@
 import pygame
 from .base_scene import BaseScene
-from ..components import Textbox, InvisibleButton, Image, Paragraph
+from ..components import InvisibleButton, Image, Paragraph
 
 class HelpScene(BaseScene):
   def __init__(self, context):

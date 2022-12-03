@@ -52,6 +52,8 @@ Papa's cooking game series is a childhood favorite of many. JS' DiningHalleria i
     * OrderingScene
     * ResultsScene
     * WelcomeScene
+    * Paragraph
+      
 
 ## Project Structure and File List
 
@@ -65,7 +67,8 @@ The Project is broken down into the following file structure:
       * button.py
       * image.py
       * invisible_button.py 
-      * textbox.py 
+      * textbox.py
+      * paragraph.py
     * scenes
       * __init__.py
       * base_scene.py
@@ -77,9 +80,16 @@ The Project is broken down into the following file structure:
       * kitchen_scene.py
       * ordering_scene.py
       * results_scene.py
+      * help_scene.py
       * welcome_scene.py
     * services
+      * __init__.py
+      * kitchen_service.py
+      * order_service.py
+      * scene_service.py
+      * score_service.py
       * controller.py
+      * util.py
   
       
 * assets
@@ -106,7 +116,7 @@ The Project is broken down into the following file structure:
 
 ## Testing
 
-* Because there are multiple scenes throughout this game, when we implemented a new function, we ran through each scene individually to made sure that the output ran the way that it was intended. After each run, we would debug and did not move on to the coding more until the bug was fixed.
+* We did user testing rather than scripted testing. Because there are multiple scenes throughout this game, when we implemented a new function, we ran through each scene individually to made sure that the output ran the way that it was intended. After each run, we would debug and did not move on to the coding more until the bug was fixed.
 
 ## ATP
 
@@ -123,14 +133,14 @@ The Project is broken down into the following file structure:
 |  9                   | click on "Take Order" button | Customer goes to player and a randomized order screen appears|
 | 10                   | click on "Create" button | The kitchen scene is shown and there is an additional order ticket on the upper right corner|
 |  11                  | click on "Take an Order" button | Goes back to the dining room|
-|  12                   | click on "Go to Kitchen" button | Goes back to the kitchen with no changes made to kitchen|
-|  13                   | click on the order ticket on the upper right corner | Shows the order|
-|  14                   | click on the exit button | Goes back to the kitchen|
-|  15                   | click on the order ticket on the upper right corner | Shows the order|
-|  16                   | click on the "Send Out Food" button | Shows the amount tips earned based on how accurate the food selected in the kitchen matches the order.|
-|  17                   | click on "Go to Kitchen" button | Goes back to the kitchen|
-|  18                   | click on the "Close Shop" button | Shows the total number of tips earned and high score|
+|  12                  | click on "Go to Kitchen" button | Goes back to the kitchen with no changes made to kitchen|
+|  13                  | click on the order ticket on the upper right corner | Shows the order|
+|  14                  | click on the exit button | Goes back to the kitchen|
+|  15                  | click on the order ticket on the upper right corner | Shows the order|
+|  16                  | click on the "Send Out Food" button | Shows the amount tips earned based on how accurate the food selected in the kitchen matches the order.|
+|  17                  | click on "Go to Kitchen" button | Goes back to the kitchen|
+|  18                  | click on the "Close Shop" button | Shows the total number of tips earned and high score|
 |  19                  | click on "Replay" button | Goes back to the dining room |
-|  20                   | click on the "Close Shop" button | Shows the total number of tips earned and high score|
-|  21                   | click on the "Go Home" button | Goes to the beginning welcome screen|
-|  22                   | click on the "Quit" button | No changes shown on screen, but the screen is stopped |
+|  20                  | click on the "Close Shop" button | Shows the total number of tips earned and high score|
+|  21                  | click on the "Go Home" button | Goes to the beginning welcome screen|
+|  22                  | click on the "Quit" button | No changes shown on screen, but the screen is stopped |
