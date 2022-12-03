@@ -5,9 +5,7 @@ from ..components import Textbox, Button, Image
 class ResultsScene(BaseScene):
   def __init__(self, context):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Provides context to the scene, creates Buttons and Textboxes
     """
     BaseScene.__init__(self, BaseScene)
     
@@ -82,9 +80,9 @@ class ResultsScene(BaseScene):
 
   def handleEvents(self, events, keys):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+    Anything defined inside this method will handle events
+    events => list of pygame events
+    keys => list of keys pressed
     """
     for event in events:
       if event.type == pygame.MOUSEBUTTONDOWN:
@@ -94,9 +92,7 @@ class ResultsScene(BaseScene):
 
   def renderSummary(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  renders order summary
     """
     pygame.draw.rect(screen, "white", [345, 32, 350, 394])
     self.summaryTitle.render(screen)
@@ -105,9 +101,8 @@ class ResultsScene(BaseScene):
           
   def render(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Blits texts onto the screen
+	  screen: (pygame.Surface) represents image on screen and location of it
     """
     self.order_image.render(screen)
     self.player.render(screen)
@@ -122,17 +117,13 @@ class ResultsScene(BaseScene):
 
   def onTakeOrder(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
-    """
+	  Switches scene to diningNoCustomer on click of takeAnOrder button
+   """
     self.sceneService.switchToScene("dining_no_customer")
   
   def goToKitchen(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Switches scene to kitchenScene on click of goToKitchen button
     """
     self.sceneService.switchToScene("kitchen_scene", context=self.context, reset=True)
     

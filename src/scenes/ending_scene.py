@@ -5,9 +5,7 @@ from ..components import Textbox, Image, Button
 class EndingScene(BaseScene):
   def __init__(self, context):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Provides context to the scene, creates Buttons and Textboxes
     """
     BaseScene.__init__(self, BaseScene)
     self.context = context
@@ -54,9 +52,9 @@ class EndingScene(BaseScene):
 
   def handleEvents(self, events, keys):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+    Anything defined inside this method will handle events
+    events => list of pygame events
+    keys => list of keys pressed
     """
     for event in events:
       if event.type == pygame.MOUSEBUTTONDOWN:
@@ -67,9 +65,8 @@ class EndingScene(BaseScene):
           
   def render(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Blits texts onto the screen
+	  screen: (pygame.Surface) represents image on screen and location of it
     """
     screen.fill((194, 226, 247))
     self.goHomeButton.render(screen)
@@ -80,27 +77,21 @@ class EndingScene(BaseScene):
 
   def reset(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  resets the score and orders list
     """
     self.scoreService.reset()
     self.orderService.reset()
 
   def onReplayClick(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Switches scene to diningNoCustomer on click ofreplayButton
     """
     self.reset()
     self.sceneService.switchToScene("dining_no_customer")
 
   def onGoHomeClick(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Switches scene to welcomeScene on click of goHomeButton
     """
     self.reset()
     self.sceneService.switchToScene("welcome")

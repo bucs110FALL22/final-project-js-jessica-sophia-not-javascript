@@ -6,9 +6,7 @@ from ..components import Textbox, Image, Button, InvisibleButton
 class KitchenScene(BaseScene):
   def __init__(self, context):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Provides context to the scene, creates Images, Buttons, and Textboxes
     """
     BaseScene.__init__(self, BaseScene)
     self.context = context
@@ -137,9 +135,7 @@ class KitchenScene(BaseScene):
 
   def updateSummaryLines(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  updates Summary of Order/ Ingredients added
     """
     self.summaryLines = []
     
@@ -157,58 +153,44 @@ class KitchenScene(BaseScene):
 
   def generateIngredientFunction(self, itemName):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  generates Ingredient
     """
     def addItem():
       """
-	general function description
-	args: (type) description
-	return: (type) description
-    """
+  	  Adds ingredient to Summary of ingredients
+      """
       self.kitchenService.addItem(itemName)
       self.updateSummaryLines()
     return addItem
 
   def generateOrderViewFunction(self, index, order):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  generates OrderView
     """
     def viewSpecificOrder():
       """
-	general function description
-	args: (type) description
-	return: (type) description
-    """
+  	  Allows user to view a specific order
+      """
       self.kitchenService.focus(order, index)
       self.sceneService.switchToScene("kitchen_order_scene", KitchenOrderScene, self.context)
     return viewSpecificOrder
       
   def onTakeAnOrderClick(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Switches scene to diningNoCustomer on click of startAnOrder button
     """
     self.sceneService.switchToScene("dining_no_customer")
 
   def onUndoClick(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  removes ingredient from order summary
     """
     self.kitchenService.undo()
     self.updateSummaryLines()
   
   def renderIngredientImages(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  renders images of ingredients onto pygame screen
     """
     self.noodles_image.render(screen)
     self.rice_image.render(screen)
@@ -221,9 +203,7 @@ class KitchenScene(BaseScene):
 
   def renderIngredientButtons(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  affixes transparent buttons onto pygame screen
     """
     self.rice_button.render(screen)
     self.noodles_button.render(screen)
@@ -236,9 +216,7 @@ class KitchenScene(BaseScene):
 
   def renderOrdersList(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+    renders visual for lists of orders
     """
     for pos in self.orderImagePositions:
       self.squiggles_image.render(screen, pos)
@@ -248,9 +226,9 @@ class KitchenScene(BaseScene):
 
   def handleEvents(self, events, keys):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+    Anything defined inside this method will handle events
+    events => list of pygame events
+    keys => list of keys pressed
     """
     for event in events:
       if event.type == pygame.MOUSEBUTTONDOWN:
@@ -273,9 +251,7 @@ class KitchenScene(BaseScene):
 
   def renderSummary(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Renders the order summary
     """
     pygame.draw.rect(screen, "white",[498, 124, 230, 341])
     self.summaryTitle.render(screen)
@@ -284,9 +260,8 @@ class KitchenScene(BaseScene):
   
   def render(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Blits texts onto the screen
+	  screen: (pygame.Surface) represents image on screen and location of it
     """
     screen.fill((194, 226, 247))
     self.title.render(screen)

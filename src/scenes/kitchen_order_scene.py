@@ -6,9 +6,7 @@ from ..components import Textbox, Button, InvisibleButton, Image
 class KitchenOrderScene(BaseScene):
   def __init__(self, context):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Provides context to the scene, creates Buttons and Textboxes
     """
     BaseScene.__init__(self, BaseScene)  
     self.context = context
@@ -59,9 +57,9 @@ class KitchenOrderScene(BaseScene):
 
   def handleEvents(self, events, keys):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+    Anything defined inside this method will handle events
+    events => list of pygame events
+    keys => list of keys pressed
     """
     for event in events:
       if event.type == pygame.MOUSEBUTTONDOWN:
@@ -72,9 +70,8 @@ class KitchenOrderScene(BaseScene):
     
   def render(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Blits texts onto the screen
+	  screen: (pygame.Surface) represents image on screen and location of it
     """
     screen.fill((194, 226, 247))
     pygame.draw.rect(screen, (255, 255, 255), [200, 72, 350, 394])
@@ -87,18 +84,14 @@ class KitchenOrderScene(BaseScene):
     self.orderTitle.render(screen)
     
   def onSendOutFoodClick(self):
-      """
-	general function description
-	args: (type) description
-	return: (type) description
     """
-      self.sceneService.switchToScene("results_scene", ResultsScene, self.context)
+	  Switches Scene to resultsScene on click out SendOutFoodButton  
+    """
+    self.sceneService.switchToScene("results_scene", ResultsScene, self.context)
     
   def onExitButtonClick(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Switches Scene to kitchenScene on click of exitButton
     """
     self.sceneService.switchToScene("kitchen_scene")
     

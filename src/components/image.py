@@ -4,9 +4,7 @@ from .base_component import BaseComponent
 class Image(BaseComponent):
   def __init__(self, path, position, *mappings):
     """
-	general function description
-	path: ()
-  position: ()
+	  Maps images 
     """
     BaseComponent.__init__(self)
 

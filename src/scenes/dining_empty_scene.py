@@ -8,9 +8,7 @@ from ..components import Button, Image, Textbox
 class DiningEmptyScene(BaseScene):
   def __init__(self, context):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Provides context to the scene, creates Buttons and Textboxes 
     """
     BaseScene.__init__(self, BaseScene)
     self.context = context
@@ -59,9 +57,9 @@ class DiningEmptyScene(BaseScene):
 
   def handleEvents(self, events, keys):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+    Anything defined inside this method will handle events
+    events => list of pygame events
+    keys => list of keys pressed
     """
     for event in events:
       if event.type == pygame.MOUSEBUTTONDOWN:
@@ -73,9 +71,8 @@ class DiningEmptyScene(BaseScene):
 
   def render(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Blits texts onto the screen
+	  screen: (pygame.Surface) represents image on screen and location of it
     """
     screen.fill((255 , 255, 255))
     self.order_image.render(screen)
@@ -87,25 +84,19 @@ class DiningEmptyScene(BaseScene):
 
   def onTakeOrderClick(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+    switches scene to DiningCustomerScene on click of the takeOrderButton
     """
     self.sceneService.switchToScene("dining_customer_scene", DiningCustomerScene, self.context)
 
   def onCloseShopClick(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+    switches scene to EndingScene on click of closeShopButton
     """
     self.sceneService.switchToScene("ending_scene", EndingScene , self.context)
-
+    
   def onGoToKitchenClick(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  switches scene to KitchenScene on click of goToKitchenButton
     """
     try:
       self.sceneService.switchToScene("kitchen_scene")

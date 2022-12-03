@@ -7,9 +7,7 @@ from ..components import Button, Textbox, Image
 class WelcomeScene(BaseScene):
   def __init__(self, context):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Provides context to the scene, creates Buttons and Textboxes
     """
     BaseScene.__init__(self, BaseScene)
     self.context = context
@@ -46,33 +44,27 @@ class WelcomeScene(BaseScene):
 
   def onStartClick(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Switches Scene to diningEmptyScene on click of startButton
     """
     self.sceneService.switchToScene("dining_no_customer", DiningEmptyScene, self.context)
 
   def onHelpClick(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Switches Scene to helpScene on click of helpButton
     """
     self.sceneService.switchToScene("help_scene", HelpScene, self.context)
     
   def onQuitClick(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Clears current Scene on click of quitButton
     """
     self.sceneService.clearCurrentScene()
 
   def handleEvents(self, events, keys):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+    Anything defined inside this method will handle events
+    events => list of pygame events
+    keys => list of keys pressed
     """
     for event in events:
       if event.type == pygame.MOUSEBUTTONDOWN:
@@ -84,9 +76,7 @@ class WelcomeScene(BaseScene):
 
   def render(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  renders buttons and visual elements of screen
     """
     screen.fill((255 , 255, 255))
     self.dining_hall_image.render(screen)

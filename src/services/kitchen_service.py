@@ -7,34 +7,38 @@ class KitchenService:
 
   def __init__(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
-    """
-    # self.summary will be a tally of all the ind used
+	  creates tally of all ingredients used, and history of undo moves
+    self.history[i] == name of item to take back
+    self.target is (order, index of order) that will be displayed on the kitchen order scene
+    """ 
     self.summary = {}
     for ing in KitchenService.INGREDIENTS:
       self.summary[ing] = 0
 
-    # self.history will be a stack containing all the undo moves
-    # self.history[i] == name of item to take back
     self.history = []
-
-    # self.target is (order, index of order) that will be displayed on the kitchen order scene
     self.target = (None, -1)
 
   def addItem(self, itemName):
+    """
+	  adds item to order summary
+    """ 
     if itemName not in self.summary:
       return
     self.summary[itemName]+= 1
     self.history.append(itemName)
   
   def reset(self):
+    """
+	  resets order summary
+    """ 
     self.history = []
     for ing in KitchenService.INGREDIENTS:
       self.summary[ing] = 0
 
   def computeDifference(self, order):
+    """
+	  Computes total tips earned according to criteria
+    """ 
     total_tips = 0
     lines = []
     for ing in KitchenService.INGREDIENTS:
@@ -69,17 +73,23 @@ class KitchenService:
     return (total_tips, lines)
 
   def undo(self):
+    """
+	  removes ingredient from order 
+    """ 
     if len(self.history) < 1:
       return
     item = self.history.pop()
     self.summary[item]-= 1
 
   def getCurrentSummary(self):
+    """
+	  gets current list of ingredients added
+    """ 
     return self.summary
 
   def focus(self, target, index):
     self.target = (target, index)
-
+  
   def getFocus(self):
     return self.target
   

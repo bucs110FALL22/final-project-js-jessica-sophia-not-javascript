@@ -6,9 +6,7 @@ from ..components import Textbox, Image, Button
 class OrderingScene(BaseScene):
   def __init__(self, context):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Provides context to the scene, creates Images, Buttons, and Textboxes
     """
     BaseScene.__init__(self, BaseScene)
     self.context = context
@@ -73,9 +71,9 @@ class OrderingScene(BaseScene):
 
   def handleEvents(self, events, keys):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+    Anything defined inside this method will handle events
+    events => list of pygame events
+    keys => list of keys pressed
     """
     for event in events:
       if event.type == pygame.MOUSEBUTTONDOWN:
@@ -85,9 +83,7 @@ class OrderingScene(BaseScene):
   
   def render(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  renders various visual elements
     """
     self.order_image.render(screen)
     self.player.render(screen)
@@ -105,8 +101,6 @@ class OrderingScene(BaseScene):
 
   def onCreateClick(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Switches Scene to kitchenScene on click of createButton
     """
     self.sceneService.switchToScene("kitchen_scene", KitchenScene, self.context)

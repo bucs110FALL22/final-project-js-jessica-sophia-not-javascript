@@ -6,9 +6,7 @@ from ..components import Textbox, Image
 class DiningCustomerScene(BaseScene):
   def __init__(self, context):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Provides context to the scene
     """
     BaseScene.__init__(self, BaseScene)
     self.context = context
@@ -38,9 +36,7 @@ class DiningCustomerScene(BaseScene):
 
   def updateStates(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Updates scene state to OrderingScene after customer walks to the player
     """
     newX = self.customerXCoordinate - 10
     self.customerXCoordinate = max(150, newX)
@@ -50,9 +46,8 @@ class DiningCustomerScene(BaseScene):
   
   def render(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	  Blits texts onto the screen
+	  screen: (pygame.Surface) represents image on screen and location of it
     """
     self.title.render(screen)
     self.order_image.render(screen)
