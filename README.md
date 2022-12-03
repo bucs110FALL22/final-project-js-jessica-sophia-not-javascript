@@ -34,8 +34,7 @@ Papa's cooking game series is a childhood favorite of many. JS' DiningHalleria i
 * Non-Standard libraries
     
 * Class Interface Design
-    * << A simple drawing that shows the class relationships in your code (see below for an example). This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm. >>
-        * ![class diagram](assets/class_diagram.jpg) 
+    * ![mvcModel](etc/mvcModel.png)
 * Classes
     * BaseComponent
     * Button

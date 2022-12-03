@@ -5,9 +5,10 @@ from ..util import getOrElse
 class Button(BaseComponent):
   def __init__(self, size, textPosition, backgroundPosition, **kwargs):
     """
-	general function description
-	size: (integer) the size of the button
-  textPosition: ()
+	initialize button class
+	size: (float, float) the size of the button
+  textPosition: (float, float) the position for the text
+  backgroundPosition: (float, float) the x and y for the button position
     """
     BaseComponent.__init__(self)
     self.size = size
@@ -31,9 +32,7 @@ class Button(BaseComponent):
 
   def handleClick(self):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	To identify the area with the event of mouse click. onClick function runs if mouse is on certain area
     """
     mx, my = pygame.mouse.get_pos()
     if self.boundaries.collidepoint(mx, my):
@@ -41,9 +40,8 @@ class Button(BaseComponent):
 
   def render(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	Draws and blits images/texts onto the screen
+	screen: (pygame.Surface) represents image on screen and location of it
     """
     w, h = self.size
     bx, by = self.backgroundPosition

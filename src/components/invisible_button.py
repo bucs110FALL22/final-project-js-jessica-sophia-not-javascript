@@ -4,9 +4,9 @@ from ..util import getOrElse
 class InvisibleButton(Button):
   def __init__(self, size, backgroundPosition, **kwargs):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	Creates invisible button
+	size: (float, float) the size of the button
+  backgroundPosition: (float, float) the x and y coordinates for the button position
     """
     Button.__init__(
       self, 
@@ -22,8 +22,7 @@ class InvisibleButton(Button):
     """
     If we are not in debug mode, we don't even need to render
     this button because it is "invisible"
-	  args: (type) description
-  	return: (type) description
+	  screen: (pygame.Surface) represents image on screen and location of it
     """
     if not self.debug:
       return

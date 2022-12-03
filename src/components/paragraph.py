@@ -4,9 +4,10 @@ from .textbox import Textbox
 class Paragraph(BaseComponent):
   def __init__(self, lines, textPosition, gap=30, **kwargs):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	Creates textbox for multiple lines of text
+	lines: (string)
+  textPosition: (float, float)
+  gap: (integer)
     """
     BaseComponent.__init__(self)
 
@@ -23,9 +24,8 @@ class Paragraph(BaseComponent):
 
   def render(self, screen):
     """
-	general function description
-	args: (type) description
-	return: (type) description
+	Blits texts onto the screen
+	screen: (pygame.Surface) represents image on screen and location of it
     """
     for text in self.textboxes:
       text.render(screen)
