@@ -27,6 +27,7 @@ Papa's cooking game series is a childhood favorite of many. JS' DiningHalleria i
     
 - **Final GUI**
   - ![final](etc/final.jpg)
+  - ![finalGuiNoFlow](etc/finalGuiNoFlow.jpg)
 ***        
 
 ## Program Design
@@ -121,5 +122,7 @@ The Project is broken down into the following file structure:
 |  7                   | click on "Undo" button | It deletes the result of the last image clicked  |
 |  8                   | click on "Take an Order" button | Goes back to the dining room|
 |  9                   | click on "Take Order" button | Customer goes to player and a randomized order screen appears|
+| 10                   | click on "Create" button | The kitchen scene is shown and there is an additional order ticket on the upper right corner|
 |  11                  | click on "Take an Order" button | Goes back to the dining room|
-|  11                   | click on "Take Order" button | Goes back to the dining room|
+|  12                   | click on "Go to Kitchen" button | Goes back to the kitchen with no changes made to kitchen|
+|  13                   | click on "Go to Kitchen" button | Goes back to the kitchen with no changes made to kitchen|
