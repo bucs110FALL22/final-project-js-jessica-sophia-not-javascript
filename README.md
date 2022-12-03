@@ -26,7 +26,7 @@ Papa's cooking game series is a childhood favorite of many. JS' DiningHalleria i
  ![Untitled-1](etc/Untitled-1.png)
     
 - **Final GUI**
-  - ![finalGuiNoFlow](etc/finalGuiNoFlow.jpg)
+  ![finalGuiWithFlow](etc/finalGuiWithFlow.jpg)
 ***        
 
 ## Program Design
