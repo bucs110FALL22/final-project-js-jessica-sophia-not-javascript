@@ -105,8 +105,13 @@ The Project is broken down into the following file structure:
     * dining_hall.jpg
     * customer.png
     * playerboy.png
-
-***
+* etc
+    * frame.png
+    * finalGuiNoFlow.jpg
+    * finalGuiWithFlow.jpg
+    * milestone2.md
+   
+  
 
 ## Tasks and Responsibilities 
 
