@@ -113,6 +113,8 @@ The Project is broken down into the following file structure:
 
 | Step                 |Procedure             |Expected Results                   |
 |----------------------|:--------------------:|----------------------------------:|
-|  1                   | Run Counter Program  |GUI window appears with count = 0  |
-|  2                   | click count button   | display changes to count = 1      |
-etc...
+|  1                   | Run Program  |GUI window appears with Start, Help, and Quit Button|
+|  2                   | click "Help" button | Displays instructions on how to play the game     |
+|  3                   | click "exit" sign | Go back to welcome menu   |
+|  4                   | click "Take Order" button | Customer goes to player and an order screen appears |
+|  5                   | click "Create" button |  The Kitchen scene is shown with the foods shown  |

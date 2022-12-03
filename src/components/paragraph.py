@@ -17,5 +17,10 @@ class Paragraph(BaseComponent):
       )
 
   def render(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     for text in self.textboxes:
       text.render(screen)

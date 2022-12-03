@@ -17,6 +17,8 @@ class InvisibleButton(Button):
     """
     If we are not in debug mode, we don't even need to render
     this button because it is "invisible"
+	  args: (type) description
+  	return: (type) description
     """
     if not self.debug:
       return

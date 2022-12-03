@@ -1,11 +1,10 @@
 from sys import exit
 import pygame
-from .scenes import *
-from .services import *
+from .scenes import WelcomeScene
+from .services import SceneService, ScoreService, KitchenService, OrderService
 
 class Controller:
   def __init__(self):
-    pygame.init()
     self.screen = pygame.display.set_mode((750, 500))
     self.clock = pygame.time.Clock()
     
@@ -18,7 +17,7 @@ class Controller:
       "order": OrderService()
     }
 
-  def run(self):
+  def mainloop(self):
     self.sceneSvc.switchToScene(
       "welcome",
       WelcomeScene,

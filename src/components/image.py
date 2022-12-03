@@ -13,5 +13,10 @@ class Image(BaseComponent):
     self.content = base
 
   def render(self, screen, newPosition=None):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     pos = self.position if newPosition == None else newPosition
     screen.blit(self.content, pos)

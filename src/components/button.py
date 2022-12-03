@@ -25,11 +25,21 @@ class Button(BaseComponent):
     self.onClick = getOrElse(kwargs, "onClick", lambda : True)
 
   def handleClick(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     mx, my = pygame.mouse.get_pos()
     if self.boundaries.collidepoint(mx, my):
       self.onClick()
 
   def render(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     w, h = self.size
     bx, by = self.backgroundPosition
     pygame.draw.rect(screen, self.backgroundColor, [bx, by, w, h])
