@@ -7,6 +7,11 @@ from ..components import Button, Image, Textbox
 
 class DiningEmptyScene(BaseScene):
   def __init__(self, context):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     BaseScene.__init__(self, BaseScene)
     self.context = context
     self.sceneService = context["scene"]
@@ -53,6 +58,11 @@ class DiningEmptyScene(BaseScene):
     )
 
   def handleEvents(self, events, keys):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     for event in events:
       if event.type == pygame.MOUSEBUTTONDOWN:
         if pygame.mouse.get_pressed()[0]:
@@ -62,6 +72,11 @@ class DiningEmptyScene(BaseScene):
           break
 
   def render(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     screen.fill((255 , 255, 255))
     self.order_image.render(screen)
     self.title.render(screen)
@@ -71,12 +86,27 @@ class DiningEmptyScene(BaseScene):
     self.player.render(screen)
 
   def onTakeOrderClick(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.sceneService.switchToScene("dining_customer_scene", DiningCustomerScene, self.context)
 
   def onCloseShopClick(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.sceneService.switchToScene("ending_scene", EndingScene , self.context)
 
   def onGoToKitchenClick(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     try:
       self.sceneService.switchToScene("kitchen_scene")
     except:

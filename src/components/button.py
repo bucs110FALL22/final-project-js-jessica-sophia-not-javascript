@@ -4,6 +4,11 @@ from ..util import getOrElse
 
 class Button(BaseComponent):
   def __init__(self, size, textPosition, backgroundPosition, **kwargs):
+    """
+	general function description
+	size: (integer) the size of the button
+  textPosition: ()
+    """
     BaseComponent.__init__(self)
     self.size = size
     self.font = getOrElse(kwargs, "font", pygame.font.SysFont("Helvetica", 35))

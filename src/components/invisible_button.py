@@ -3,6 +3,11 @@ from ..util import getOrElse
 
 class InvisibleButton(Button):
   def __init__(self, size, backgroundPosition, **kwargs):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     Button.__init__(
       self, 
       size,

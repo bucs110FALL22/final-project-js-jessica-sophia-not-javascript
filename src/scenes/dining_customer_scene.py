@@ -5,6 +5,11 @@ from ..components import Textbox, Image
 
 class DiningCustomerScene(BaseScene):
   def __init__(self, context):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     BaseScene.__init__(self, BaseScene)
     self.context = context
     self.sceneService = context["scene"]
@@ -32,6 +37,11 @@ class DiningCustomerScene(BaseScene):
     self.title = Textbox("Dining Room", (17, 15), font=font)
 
   def updateStates(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     newX = self.customerXCoordinate - 10
     self.customerXCoordinate = max(150, newX)
 
@@ -39,6 +49,11 @@ class DiningCustomerScene(BaseScene):
       self.sceneService.switchToScene("order_scene", OrderingScene, self.context)
   
   def render(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.title.render(screen)
     self.order_image.render(screen)
     self.player.render(screen)

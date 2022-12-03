@@ -4,6 +4,11 @@ from ..components import Textbox, Image, Button
 
 class EndingScene(BaseScene):
   def __init__(self, context):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     BaseScene.__init__(self, BaseScene)
     self.context = context
     self.sceneService = context["scene"]
@@ -48,6 +53,11 @@ class EndingScene(BaseScene):
     
 
   def handleEvents(self, events, keys):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     for event in events:
       if event.type == pygame.MOUSEBUTTONDOWN:
         if pygame.mouse.get_pressed()[0]:
@@ -56,6 +66,11 @@ class EndingScene(BaseScene):
           break
           
   def render(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     screen.fill((194, 226, 247))
     self.goHomeButton.render(screen)
     self.player.render(screen)
@@ -64,13 +79,28 @@ class EndingScene(BaseScene):
     self.highScore.render(screen)
 
   def reset(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.scoreService.reset()
     self.orderService.reset()
 
   def onReplayClick(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.reset()
     self.sceneService.switchToScene("dining_no_customer")
 
   def onGoHomeClick(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.reset()
     self.sceneService.switchToScene("welcome")

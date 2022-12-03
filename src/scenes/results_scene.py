@@ -4,6 +4,11 @@ from ..components import Textbox, Button, Image
 
 class ResultsScene(BaseScene):
   def __init__(self, context):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     BaseScene.__init__(self, BaseScene)
     
     self.context = context
@@ -76,6 +81,11 @@ class ResultsScene(BaseScene):
     )
 
   def handleEvents(self, events, keys):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     for event in events:
       if event.type == pygame.MOUSEBUTTONDOWN:
         if pygame.mouse.get_pressed()[0]:
@@ -83,12 +93,22 @@ class ResultsScene(BaseScene):
           self.goToKitchenButton.handleClick()
 
   def renderSummary(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     pygame.draw.rect(screen, "white", [345, 32, 350, 394])
     self.summaryTitle.render(screen)
     for line in self.summaryLines:
       line.render(screen)
           
   def render(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.order_image.render(screen)
     self.player.render(screen)
     self.customer.render(screen)
@@ -101,8 +121,18 @@ class ResultsScene(BaseScene):
     self.takeAnOrderButton.render(screen)
 
   def onTakeOrder(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.sceneService.switchToScene("dining_no_customer")
   
   def goToKitchen(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.sceneService.switchToScene("kitchen_scene", context=self.context, reset=True)
     

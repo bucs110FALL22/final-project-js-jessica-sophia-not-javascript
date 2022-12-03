@@ -6,6 +6,11 @@ class KitchenService:
   ]
 
   def __init__(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     # self.summary will be a tally of all the ind used
     self.summary = {}
     for ing in KitchenService.INGREDIENTS:

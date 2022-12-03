@@ -6,6 +6,11 @@ from ..components import Button, Textbox, Image
 
 class WelcomeScene(BaseScene):
   def __init__(self, context):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     BaseScene.__init__(self, BaseScene)
     self.context = context
     self.sceneService = context["scene"]
@@ -40,15 +45,35 @@ class WelcomeScene(BaseScene):
     self.title = Textbox("JS' Dining Halleria", (375 - 160, 40))
 
   def onStartClick(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.sceneService.switchToScene("dining_no_customer", DiningEmptyScene, self.context)
 
   def onHelpClick(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.sceneService.switchToScene("help_scene", HelpScene, self.context)
     
   def onQuitClick(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.sceneService.clearCurrentScene()
 
   def handleEvents(self, events, keys):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     for event in events:
       if event.type == pygame.MOUSEBUTTONDOWN:
         if pygame.mouse.get_pressed()[0]:
@@ -58,6 +83,11 @@ class WelcomeScene(BaseScene):
           break
 
   def render(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     screen.fill((255 , 255, 255))
     self.dining_hall_image.render(screen)
 

@@ -5,6 +5,11 @@ from ..components import Textbox, Image, Button, InvisibleButton
 
 class KitchenScene(BaseScene):
   def __init__(self, context):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     BaseScene.__init__(self, BaseScene)
     self.context = context
     self.sceneService = context["scene"]
@@ -131,6 +136,11 @@ class KitchenScene(BaseScene):
     self.updateSummaryLines()
 
   def updateSummaryLines(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.summaryLines = []
     
     summary_font = pygame.font.SysFont("Helvetica", 20)
@@ -146,25 +156,60 @@ class KitchenScene(BaseScene):
       )
 
   def generateIngredientFunction(self, itemName):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     def addItem():
+      """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
       self.kitchenService.addItem(itemName)
       self.updateSummaryLines()
     return addItem
 
   def generateOrderViewFunction(self, index, order):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     def viewSpecificOrder():
+      """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
       self.kitchenService.focus(order, index)
       self.sceneService.switchToScene("kitchen_order_scene", KitchenOrderScene, self.context)
     return viewSpecificOrder
       
   def onTakeAnOrderClick(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.sceneService.switchToScene("dining_no_customer")
 
   def onUndoClick(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.kitchenService.undo()
     self.updateSummaryLines()
   
   def renderIngredientImages(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.noodles_image.render(screen)
     self.rice_image.render(screen)
     self.chicken_image.render(screen)
@@ -175,6 +220,11 @@ class KitchenScene(BaseScene):
     self.broccoli_image.render(screen)
 
   def renderIngredientButtons(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.rice_button.render(screen)
     self.noodles_button.render(screen)
     self.chicken_button.render(screen)
@@ -185,6 +235,11 @@ class KitchenScene(BaseScene):
     self.pepper_button.render(screen)
 
   def renderOrdersList(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     for pos in self.orderImagePositions:
       self.squiggles_image.render(screen, pos)
 
@@ -192,6 +247,11 @@ class KitchenScene(BaseScene):
       button.render(screen)
 
   def handleEvents(self, events, keys):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     for event in events:
       if event.type == pygame.MOUSEBUTTONDOWN:
         if pygame.mouse.get_pressed()[0]:
@@ -212,12 +272,22 @@ class KitchenScene(BaseScene):
           break
 
   def renderSummary(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     pygame.draw.rect(screen, "white",[498, 124, 230, 341])
     self.summaryTitle.render(screen)
     for line in self.summaryLines:
       line.render(screen)
   
   def render(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     screen.fill((194, 226, 247))
     self.title.render(screen)
 

@@ -3,6 +3,11 @@ from .textbox import Textbox
 
 class Paragraph(BaseComponent):
   def __init__(self, lines, textPosition, gap=30, **kwargs):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     BaseComponent.__init__(self)
 
     x, y = textPosition

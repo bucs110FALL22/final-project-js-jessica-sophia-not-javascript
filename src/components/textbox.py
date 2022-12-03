@@ -4,6 +4,11 @@ from ..util import getOrElse
 
 class Textbox(BaseComponent):
   def __init__(self, content, textPosition, **kwargs):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     BaseComponent.__init__(self)
 
     self.font = getOrElse(kwargs, "font", pygame.font.SysFont("Helvetica", 35))
@@ -13,4 +18,10 @@ class Textbox(BaseComponent):
     self.textPosition = textPosition
 
   def render(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     screen.blit(self.content, self.textPosition)
+

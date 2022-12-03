@@ -3,6 +3,11 @@ from .base_component import BaseComponent
 
 class Image(BaseComponent):
   def __init__(self, path, position, *mappings):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     BaseComponent.__init__(self)
 
     self.position = position

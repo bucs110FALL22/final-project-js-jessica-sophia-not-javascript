@@ -5,6 +5,11 @@ from ..components import Textbox, Image, Button
 
 class OrderingScene(BaseScene):
   def __init__(self, context):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     BaseScene.__init__(self, BaseScene)
     self.context = context
     self.sceneService = context["scene"]
@@ -67,6 +72,11 @@ class OrderingScene(BaseScene):
     
 
   def handleEvents(self, events, keys):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     for event in events:
       if event.type == pygame.MOUSEBUTTONDOWN:
         if pygame.mouse.get_pressed()[0]:
@@ -74,6 +84,11 @@ class OrderingScene(BaseScene):
           break
   
   def render(self, screen):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.order_image.render(screen)
     self.player.render(screen)
     self.customer.render(screen)
@@ -89,4 +104,9 @@ class OrderingScene(BaseScene):
     self.createButton.render(screen)
 
   def onCreateClick(self):
+    """
+	general function description
+	args: (type) description
+	return: (type) description
+    """
     self.sceneService.switchToScene("kitchen_scene", KitchenScene, self.context)
