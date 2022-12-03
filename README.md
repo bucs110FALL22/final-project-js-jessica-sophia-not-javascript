@@ -1,4 +1,3 @@
-:warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 # CS110 Project Proposal
 # JS' DiningHalleria
 ## CS 110 Final Project
@@ -26,7 +25,7 @@ Papa's cooking game series is a childhood favorite of many. JS' DiningHalleria i
  ![Untitled-1](etc/Untitled-1.png)
     
 - **Final GUI**
-  ![finalGuiWithFlow](etc/finalGuiWithFlow.jpg)
+  ![final](etc/final.png)
 ***        
 
 ## Program Design
