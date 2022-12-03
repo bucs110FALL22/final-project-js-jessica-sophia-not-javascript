@@ -5,6 +5,9 @@ class SceneService:
   """
 
   def __init__(self):
+    """
+  	initializes 
+    """
     self.activeScene = None
     self.classes = {}
     self.generatedScenes = {}
@@ -36,6 +39,11 @@ class SceneService:
   
   def getCurrentScene(self):
     return self.activeScene
-
+  """
+	Returns state info (the current Scene)
+  """ 
   def clearCurrentScene(self):
     self.activeScene = None
+    """
+  	Clears current scene
+    """     

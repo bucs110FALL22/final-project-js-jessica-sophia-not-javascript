@@ -7,7 +7,7 @@ class CreditsScene(BaseScene):
     context: passes context of scene
     """
     BaseScene.__init__(self, BaseScene)
-    """
+    
   
   def render(self, screen):
     pass

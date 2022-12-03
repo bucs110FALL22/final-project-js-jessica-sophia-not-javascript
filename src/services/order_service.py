@@ -44,21 +44,35 @@ class OrderService:
 
   def getOrders(self):
     return self.orders
-  
+    """
+	  gets list of orders
+    """ 
   def addOrder(self, order):
     self.orders.append(order)
-
+    """
+	  adds an order to queue
+    """ 
   def getOrder(self, index):
     return self.orders[index]
-
+    """
+	  gets chosen order
+    """ 
   def removeOrder(self, order):
     id = order["id"]
     self.orders = list(filter(lambda o : o["id"] != id, self.orders))
-
+    """
+	  removes order from queue
+    """ 
   def size(self):
     return len(self.orders)
+    """
+	  size of orders 
+    """ 
 
   def getSummary(self, order):
+    """
+	  Gets summary, with amounts of each ingredient on the order ticket
+    """ 
     lines = []
     for ing in OrderService.INGREDIENTS:
       if ing not in order:

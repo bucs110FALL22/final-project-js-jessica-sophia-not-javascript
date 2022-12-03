@@ -142,7 +142,7 @@ The Project is broken down into the following file structure:
 |  14                  | click on the exit button | Goes back to the kitchen|
 |  15                  | click on the order ticket on the upper right corner | Shows the order|
 |  16                  | click on the "Send Out Food" button | Shows the amount tips earned based on how accurate the food selected in the kitchen matches the order.|
-|  17                  | click on "Go to Kitchen" button | Goes back to the kitchen|
+|  17                  | click on "Go to Kitchen" button | Goes back to the kitchen and the summary is reset|
 |  18                  | click on the "Close Shop" button | Shows the total number of tips earned and high score|
 |  19                  | click on "Replay" button | Goes back to the dining room |
 |  20                  | click on the "Close Shop" button | Shows the total number of tips earned and high score|

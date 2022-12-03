@@ -5,25 +5,42 @@ class ScoreService:
   """
 
   def __init__(self):
+    """
+  	initializes tip values
+    """
     self.currentTip = 0
     self.maxTip = 0
-
   def getTips(self):
+    """
+  	returns current tips value
+    """
     return self.currentTip
-
+    
   def getHighScore(self):
+    """
+    returns high score of tips
+    """
     return self.maxTip
     
   def reset(self):
+    """
+  	resets tips value
+    """
     self.currentTip = 0
 
   def hardReset(self):
+    """
+  	Resets both the highscore maxtip and the tips value    
+    """
     self.currentTip = 0
     self.maxTip = 0
 
   def addTip(self, amount):
+    """
+  	Adds to previously earned tips
+    """
     self.currentTip+= amount
-
+  
   def updateMax(self):
     """
     updates the max amount of tips ever recieved
