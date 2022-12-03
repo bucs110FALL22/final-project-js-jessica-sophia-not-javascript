@@ -13,7 +13,7 @@ class HelpScene(BaseScene):
       [
         "Help",
         "To play the game, click start and",
-        "take order. Aferwards, click",
+        "take order. Afterwards, click",
         "create and match the order by",
         "clicking on the images of the",
         "food. You can then take another",
