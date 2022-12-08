@@ -22,7 +22,7 @@ Papa's cooking game series is a childhood favorite of many. JS' DiningHalleria i
 ## User Interface Design
 
 - **Initial Concept**
- ![Untitled-1](etc/Untitled-1.png)
+ ![mvcModel](etc/mvcModel.png)
     
 - **Final GUI**
   ![final](etc/final.png)
