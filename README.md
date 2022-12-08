@@ -128,22 +128,24 @@ The Project is broken down into the following file structure:
 |  1                   | Run Program  |GUI window appears with Start, Help, and Quit Button|
 |  2                   | click "Help" button | Displays instructions on how to play the game     |
 |  3                   | click "exit" sign | Go back to welcome menu   |
-|  4                   | click "Take Order" button | Customer goes to player and a randomized order screen appears |
-|  5                   | click "Create" button |  The kitchen scene is shown with the foods shown  |
-|  6                   | click on any of the foods | Every time the food is clicked, the result is shown under "Summary"  |
-|  7                   | click on "Undo" button | It deletes the result of the last image clicked  |
-|  8                   | click on "Take an Order" button | Goes back to the dining room|
-|  9                   | click on "Take Order" button | Customer goes to player and a randomized order screen appears|
-| 10                   | click on "Create" button | The kitchen scene is shown and there is an additional order ticket on the upper right corner|
-|  11                  | click on "Take an Order" button | Goes back to the dining room|
-|  12                  | click on "Go to Kitchen" button | Goes back to the kitchen with no changes made to kitchen|
-|  13                  | click on the order ticket on the upper right corner | Shows the order|
-|  14                  | click on the exit button | Goes back to the kitchen|
-|  15                  | click on the order ticket on the upper right corner | Shows the order|
-|  16                  | click on the "Send Out Food" button | Shows the amount tips earned based on how accurate the food selected in the kitchen matches the order.|
-|  17                  | click on "Go to Kitchen" button | Goes back to the kitchen and the summary is reset|
-|  18                  | click on the "Close Shop" button | Shows the total number of tips earned and high score|
-|  19                  | click on "Replay" button | Goes back to the dining room |
+|  4                   | click "Start" button | Goes to dining room |
+|  5                   | click "Take Order" button | Customer goes to player and a randomized order screen appears |
+|  6                   | click "Create" button |  The kitchen scene is shown with the foods shown  |
+|  7                   | click on any of the foods | Every time the food is clicked, the result is shown under "Summary"  |
+|  8                   | click on "Undo" button | It deletes the result of the last image clicked  |
+|  9                   | click on "Take an Order" button | Goes back to the dining room|
+| 10                   | click on "Take Order" button | Customer goes to player and a randomized order screen appears|
+| 11                   | click on "Create" button | The kitchen scene is shown and there is an additional order ticket on the upper right corner|
+|  12                  | click on "Take an Order" button | Goes back to the dining room|
+|  13                  | click on "Go to Kitchen" button | Goes back to the kitchen with no changes made to kitchen|
+|  14                  | click on the order ticket on the upper right corner | Shows the order|
+|  15                  | click on the exit button | Goes back to the kitchen|
+|  16                  | click on the order ticket on the upper right corner | Shows the order|
+|  17                  | click on the "Send Out Food" button | Shows the amount tips earned based on how accurate the food selected in the kitchen matches the order.|
+|  18                  | click on "Go to Kitchen" button | Goes back to the kitchen and the summary is reset|
+|  19                  | click on "Take an order" button | Goes back to the dining room|
 |  20                  | click on the "Close Shop" button | Shows the total number of tips earned and high score|
-|  21                  | click on the "Go Home" button | Goes to the beginning welcome screen|
-|  22                  | click on the "Quit" button | No changes shown on screen, but the screen is stopped |
+|  21                  | click on "Replay" button | Goes back to the dining room |
+|  22                  | click on the "Close Shop" button | Shows the total number of tips earned and high score|
+|  23                  | click on the "Go Home" button | Goes to the beginning welcome screen|
+|  24                  | click on the "Quit" button | No changes shown on screen, but the screen is stopped |
